@@ -1,0 +1,124 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh; 
+
+   /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+    background-image: url(rami.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.name{
+    width: 200;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    align-content: space-between;
+}
+
+
+.had{
+    width: 200;
+    height: 100;
+
+    margin-top: 5;
+    margin-left: 0;
+}
+
+
+.footer{
+    width: 200;
+    height: 100;
+    display: grid;
+    align-content: space-around;
+    justify-content: center;
+    color: rgb(8, 115, 238);
+    
+}
+
+.game-container{
+
+    width: 640px;
+    height: 640px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding: 10px;
+    perspective: 1000px;
+    margin-left: 20%;
+
+
+}
+
+.Card{
+    border: 1px solid rgb(110, 18, 231);
+    border-radius: 10px;
+    position: relative;
+    background: blue;
+    transform-style: preserve-3d;
+    transition: all .2s;
+    box-shadow: 1px 1px  10px black;
+}
+
+
+.Card:active{
+
+    transform: scale(.95);
+    transition: all .2s;
+}
+
+
+.Card.flip{
+
+    transform: rotateY(180deg);
+}
+
+
+
+.front,
+.back{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+.front{
+
+    transform: rotateY(180deg);
+}
+
+
+@media screen and (max-width:650px) {
+
+
+    .game-container{
+
+        width: 100vw;
+        height: 640px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 5px;
+        padding: 10px;
+        perspective: 1000px;
+        margin-left: 5%;
+    
+    
+    }
+    
+    
+    body{
+        background-image: none;
+        background-color: rgb(16, 182, 233);
+    }
+}
